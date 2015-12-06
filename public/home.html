@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Steam ID</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="account in accounts">
+      <td>
+        <a ng-href="#/{{account.id}}/trade-offers">{{account.username}}</a>
+      </td>
+      <td>
+        <a ng-href="#/{{account.id}}/trade-offers">{{account.id}}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<h1>{{steamId}}</h1>
+
+<h3>Trade Offers</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Trade Offer ID</th>
+      <th>Partner Account ID</th>
+      <th>Message</th>
+      <th>Expire</th>
+      <th>Status</th>
+      <th>Item Count</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="offer in data.response.trade_offers_sent">
+      <td>{{$index+1}}</td>
+      <td><a href="#/{{steamId}}/trade-offer/{{offer.tradeofferid}}">{{offer.tradeofferid}}</a></td>
+      <td><a href="/goto/steam-profile/{{offer.accountid_other}}" target="_blank">{{offer.accountid_other}}</a></td>
+      <td>{{offer.message}}</td>
+      <td>{{offer.expiration_time * 1000 | date : 'yyyy-MMM-dd HH:mm:ss'}}</td>
+      <td>{{offer.trade_offer_state}}</td>
+      <td>{{offer.items_to_receive.length - offer.items_to_give.length}}</td>
+      <td>{{offer.time_created * 1000 | date : 'yyyy-MMM-dd HH:mm:ss'}}</td>
+      <td>{{offer.time_updated * 1000 | date : 'yyyy-MMM-dd HH:mm:ss'}}</td>
+    </tr>
+  </tbody>
+</table>
