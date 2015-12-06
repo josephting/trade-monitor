@@ -1,3 +1,7 @@
+# Trade Monitor
+
+This app allows you to quickly view all the trade offers your Steam accounts sent. You can also cancel a trade offer directly within the app.
+
 # `credentials.json`
 
 You must create a `credentials.json` file in project root in order for this to work. This file contains the Steam ID of the Steam account you want to track along with its username or any name you want to tag the account as and the [API key](http://steamcommunity.com/dev/apikey).
