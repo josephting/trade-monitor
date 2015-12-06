@@ -21,4 +21,25 @@ Format
 
 # Run server
 
+Make sure you have Gulp and Bower installed globally.
+
+```
+npm install -g gulp
+npm install -g bower
+```
+
+Install local dependencies
+```
+npm install
+bower install
+```
+
+Build and compile static assets
+
+`gulp`
+
+Run server
+
 `node index.js`
+
+Navigate to [http://localhost:3000](http://localhost:3000) to start using the app.
