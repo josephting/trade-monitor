@@ -1,0 +1,17 @@
+<h3>Trade Offer Status</h3>
+
+<form>
+  <div class="form-group">
+    <ui-select ng-model="steam64id.selected" theme="bootstrap" ng-change="generateEndpoint()">
+      <ui-select-match placeholder="Steam 64bit ID">{{steam64id.selected.id}}</ui-select-match>
+      <ui-select-choices repeat="account in (accounts | filter: { id: $select.search }) track by account.id">
+        <span ng-bind="account.id"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Trade offer ID" ng-model="tradeofferid" ng-change="generateEndpoint()">
+  </div>
+</form>
+
+<a href="{{endpoint}}" target="_blank">{{endpoint}}</a>
