@@ -95,7 +95,7 @@ app.get('/goto/steam-profile/:accountId', function(req, res) {
 app.use('/', express.static('public'));
 
 app.set('views', './public');
-app.listen(3000);
+app.listen(process.env.PORT | 3000);
 
 function convertAccountIDToSteam64ID(accountId) {
     var sid = new SteamID();
