@@ -5,8 +5,16 @@ var fs = require('fs'),
     querystring = require('querystring'),
     SteamID = require('steamid'),
     app = express(),
-    cred = JSON.parse(fs.readFileSync('credentials.json')),
-    baseUrl = 'http://api.steampowered.com/IEconService/';
+    baseUrl = 'http://api.steampowered.com/IEconService/',
+    cred = {};
+
+try {
+    cred = JSON.parse(fs.readFileSync('credentials.json'));
+} catch (e) {
+    if (e.code === 'ENOENT') {
+        cred = JSON.parse(process.env.credentials);
+    }
+}
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/public/index.html');
